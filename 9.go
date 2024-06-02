@@ -6,14 +6,14 @@ import (
 )
 
 func isPalindrome(x int) bool {
-	// Convert the int to a string
 	x_str := strconv.Itoa(x)
 	length_of_x := len(x_str)
 
 	halfway := length_of_x / 2
+	end_index := length_of_x - 1
 
-	for i := 0; i < halfway; i++ {
-		if x_str[i] != x_str[length_of_x-i-1] {
+	for index := 0; index < halfway; index++ {
+		if x_str[index] != x_str[end_index-index] {
 			return false
 		}
 	}

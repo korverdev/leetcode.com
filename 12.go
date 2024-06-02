@@ -30,10 +30,12 @@ func intToRoman(num int) string {
 	builder := strings.Builder{}
 
 	for _, symbol := range symbols {
-		for num >= symbol.value {
-			num -= symbol.value
-			builder.WriteString(symbol.roman)
-		}
+		divisible := num / symbol.value
+
+		num -= divisible * symbol.value
+
+		repeated := strings.Repeat(symbol.roman, divisible)
+		builder.WriteString(repeated)
 	}
 
 	return builder.String()

@@ -30,3 +30,9 @@ func TestIntToRoman3(t *testing.T) {
 		t.Errorf("Expected %s but got %s", expected, result)
 	}
 }
+
+func BenchmarkIntToRoman(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		intToRoman(b.N)
+	}
+}

@@ -6,6 +6,10 @@ import (
 )
 
 func isPalindrome(x int) bool {
+	if x < 0 {
+		return false
+	}
+
 	x_str := strconv.Itoa(x)
 	length_of_x := len(x_str)
 

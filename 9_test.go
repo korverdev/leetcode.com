@@ -32,7 +32,9 @@ func TestIsPalindrome3(t *testing.T) {
 }
 
 func BenchmarkIsPalindrome(b *testing.B) {
-	for i := 0; i < b.N; i++ {
+	midpoint := b.N / 2
+
+	for i := -midpoint; i < midpoint; i++ {
 		isPalindrome(b.N)
 	}
 }
